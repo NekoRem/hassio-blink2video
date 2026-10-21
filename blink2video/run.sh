@@ -9,6 +9,9 @@ except Exception:
     print("")
 PY
 )"
+# MJPEG restreamer on :8766 (restarted if it ever exits).
+( while true; do python /stream_proxy.py; sleep 3; done ) &
+
 echo "blink2video: trusted host = '${TRUSTED:-<none>}'"
 if [ -n "$TRUSTED" ]; then
     exec python blink2video.py start --trusted-host "$TRUSTED"

@@ -1,5 +1,5 @@
 name: blink2video
-version: "0.25.0"
+version: "0.25.0.1"
 slug: blink2video
 description: Blink camera live view, arming and a local timestamped clip archive (wraps nico579/blink2video)
 url: https://github.com/nico579/blink2video
@@ -11,8 +11,10 @@ startup: services
 boot: auto
 ports:
   8765/tcp: 8765
+  8766/tcp: 8766
 ports_description:
   8765/tcp: blink2video web interface
+  8766/tcp: MJPEG restreamer (/stream, /still.jpg) for Home Assistant
 webui: http://[HOST]:[PORT:8765]
 map:
   - addon_config:rw

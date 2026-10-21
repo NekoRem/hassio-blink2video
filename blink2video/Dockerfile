@@ -8,6 +8,7 @@ ENV BLINK_HOME=/data \
     BLINK_NO_BROWSER=1
 
 COPY run.sh /run.sh
+COPY stream_proxy.py /stream_proxy.py
 RUN chmod +x /run.sh
 
 WORKDIR /app
